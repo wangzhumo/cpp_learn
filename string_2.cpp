@@ -6,7 +6,7 @@ using namespace std;
 //String的基本操作.
 int main(){
 
-    char hellow[] = {"hello world!"};
+    char hellow[] = {"hello ~world!"};
 
 
     //1.长度  strlen() 字符串的有效长度
