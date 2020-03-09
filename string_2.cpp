@@ -1,9 +1,12 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
 //String的基本操作.
+//注意去使用 strnlen_s  stcpy_s 等等的安全函数
+//redis.io   sdshdr  它类似于Java中的ArrayList，它采用预分配冗余空间的方式来减少内存的频繁分配
+
 int main(){
 
     char hellow[] = {"hello ~world!"};
@@ -29,5 +32,6 @@ int main(){
     //4.字符串拼接  strcat(s1,s2)  字符串s2拼接到s1后面
 
     //5.查找字符串  strchr(s1,char1)查找一个字符   strstr(s1,s2)查找string
+
     return 0;
 }
