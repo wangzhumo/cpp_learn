@@ -4,6 +4,8 @@ using namespace std;
 
 
 //指针
+//https://zhuanlan.zhihu.com/p/27974028
+//这“两己三他”，展开来说，就是：己址、己值、他值、他址、他型
 int main(){
     int a = 112,b = -1;
 
