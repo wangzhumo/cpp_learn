@@ -8,12 +8,15 @@
             "type": "shell",
             "command": "clang++",
             "args": [
-                "vector_1.cpp"
+                "pointer_1.cpp"
             ],
             "group": {
-                "kind":"build",
+                "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
