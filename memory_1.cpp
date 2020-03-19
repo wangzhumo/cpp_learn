@@ -1,8 +1,5 @@
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include <string>
 
 
 int a = 0;      //(GVAR) 全局初始化区
