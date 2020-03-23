@@ -32,6 +32,8 @@ int main(){
     char * strc = new char[strlen(s1.c_str())+1];
     strcpy(strc, s1.c_str());    
 
+    //strcpy_s   系列是Window自己的实现
+
     //拷贝
     string cp_s2 = s1;
 
