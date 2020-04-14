@@ -23,7 +23,20 @@ int main(){        //(text)代码区
 
     //strcpy_s(p4,7,"123456");    //(text)代码区
 
-
+    if(p1 != NULL){
+        delete p1;
+        p1 = NULL;
+    }
+    
+    if(p2 != NULL){
+        delete p2;
+        p2 = NULL;
+    }
+    
+    if(p4 != NULL){
+        delete[] p4;    //数组的释放使用, delete [] 
+        p4 = NULL;
+    }
     
     return 0;                     //(text)代码区
 
