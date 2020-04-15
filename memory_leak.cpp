@@ -34,7 +34,11 @@ int main(){
             auto_ptr<string>(new string("Rust"))
         };
 
+        auto_ptr<string>  pC;
+        pC = code_lang[2];
+        //此时,code_lang中的元素, java 就已经被释放了,已经成为了nullptr,而pC获得了原来的值
 
     }
+    //当超出这个 {} 的范围后,auto_ptr会自己释放,从而使得它指向的对象也会释放 delete/
     return 0;
 }
