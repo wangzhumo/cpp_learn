@@ -1,4 +1,8 @@
 #include <iostream>
+#include <memory>
+#include <string>
+
+using namespace std;
 
 //内存泄露
 //  程序中已经动态分配的堆内存由于一些原因没有释放,或者无法释放
@@ -9,8 +13,28 @@
 //	shared_ptr
 //	weak_ptr
 //	(deprecated) auto_ptr   C++17
-int main(){
-    
+//		- 通过 new  获取对象,在auto_ptr对象销毁的时候,他所管理的对象也会自动delete
+//		- 如果传递给其他的智能指针,原来的指针就失去了控制权,会被置为null_ptr
+//		
 
+int main(){
+
+    {
+        //大括号用来确定auto_ptr的失效范围
+        auto_ptr<int> pl(new int(10));
+
+        cout << *p1 << endl;
+
+
+        auto_ptr<string> code_lang[5] = {
+            auto_ptr<string>(new string("C++")),
+            auto_ptr<string>(new string("Kotlin")),
+            auto_ptr<string>(new string("Java")),
+            auto_ptr<string>(new string("Python")),
+            auto_ptr<string>(new string("Rust"))
+        };
+
+
+    }
     return 0;
 }
