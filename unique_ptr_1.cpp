@@ -15,10 +15,11 @@ int main(){
     //定义范围
     {
         auto q1 = unique_ptr<int>(new int(12));
-        
+        cout << *(q1.get()) << endl; 
     }
     //当程序运行到这里,说明 q1 已经出了它的作用范围,此时就已经被释放了.
-
+    //cout << ((q1.get() != nullptr)? *(q1.get()) : -1 ) << endl;  
+    //'q1' was not declared in this scope
 
     // unique_ptr
     auto w = std::unique_ptr<int>(new int(10));
