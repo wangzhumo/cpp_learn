@@ -49,7 +49,25 @@ void printColor2(color colors){
     }
 }
 
+void printColor3(){
+    int arrays[4] = {'a','b','c','d'};
+    int length = sizeof(arrays) / sizeof(arrays[0]);
+    for (size_t i = 0; i < length; i++)
+    {
+        cout << arrays[i] << endl;
+    }
 
+    for (auto &item : arrays){
+        cout << item << endl;
+    }
+
+    while (length > 0)
+    {
+        length--;
+        cout << arrays[length] << endl;
+    }
+     
+}
 //if语句
 // if(条件) {
 //     要执行的语句     
@@ -65,6 +83,6 @@ int main(){
 
     printColor(color0);
     printColor2(color0);
-
+    printColor3();
     return 0;
 }
