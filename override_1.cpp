@@ -26,7 +26,7 @@ int test(int a =1 ,int b =2);
 //override
 int main(){
 
-    //函数指针
+    //函数指针 : 指向函数入口地址的指针
     //此时可以使用函数指针来直接指向第一个方法
     int (*pf)(int); 
     //这个函数指针是指   函数指针名为p ,返回值是int  参数是int的一个函数
@@ -36,6 +36,16 @@ int main(){
     //int add(int nLeft,int nRight);  函数定义 
     //int (*pf)(int,int);    未初始化的函数指针
     //pf = add;              通过赋值使得函数指针指向具体函数   
+
+    pf(12);
+
+    //一般形式 : 函数的返回数据类型 （*指针变量名字）（参数表）
+    //函数指针 or 函数的返回值是指针
+    //eg:
+    //int(*pf)(int);
+    //int* p(int); 返回值是int*的函数  p
+    //char *strcpy    
+    
 
     return 0;
 }
