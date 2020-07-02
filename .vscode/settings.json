@@ -60,6 +60,12 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "utility": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "*.tcc": "cpp",
+        "clocale": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "numeric": "cpp",
+        "memory_resource": "cpp"
     }
 }
