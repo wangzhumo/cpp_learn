@@ -27,3 +27,6 @@ public:
         setChange("News -> " + str);
     }
 };
+
+
+

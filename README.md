@@ -37,3 +37,5 @@
 `singleton.cpp` 单例模式
 
 `observalbe.cpp` 观察者模式
+
+`cast_cpp.cpp` 类型转换
