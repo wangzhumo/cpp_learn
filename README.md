@@ -31,3 +31,9 @@
 `fib_fun.cpp`  斐波那契数列的递归
 
 ## 进阶知识
+
+`Complex.cpp` 类/重载操作符/函数
+
+`singleton.cpp` 单例模式
+
+`observalbe.cpp` 观察者模式

@@ -5,8 +5,6 @@
 #ifndef CPP_LEARN_COMPLEX_H
 #define CPP_LEARN_COMPLEX_H
 
-#endif //CPP_LEARN_COMPLEX_H
-
 #pragma once
 #include <iostream>
 
@@ -57,3 +55,5 @@ private:
     double _real;
     double _image;
 };
+
+#endif //CPP_LEARN_COMPLEX_H
