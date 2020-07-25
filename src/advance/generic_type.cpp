@@ -36,4 +36,16 @@ public:
 //        return 0;
 //    }
 
+
+
+    // what ???
+    template<int n> struct Sum{
+        enum Value {N = Sum<n-1>::N+n};
+    };
+
+    template<> struct Sum<1>{
+        enum Value{N =1};
+    };
+
+    // std::cout << Sum<100>::N << endl;
 };
