@@ -6,6 +6,6 @@ int main(){
     Complex x(2.0,4.0);
 
     Complex r = c + x;
-    std::cout << "real = " << r.getReal << "  image = " << r.getImage << std::endl;
+    std::cout << "real = " << r.getReal() << "  image = " << r.getImage() << std::endl;
     return 0;
 }
