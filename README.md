@@ -39,3 +39,7 @@
 `observalbe.cpp` 观察者模式
 
 `cast_cpp.cpp` 类型转换
+
+`adapter.cpp`  适配器模式
+
+`generic_type.cpp`  泛型
