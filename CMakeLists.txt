@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 ## PROJECT NAME & VERSION
-project(cpp_learn VERSION 1.0.1 LANGUAGES CXX)
+project(learn_cpp VERSION 1.0.1 LANGUAGES CXX)
 
 # 设置编译选项
 # 允许c++11标准、O3优化、多线程。match选项可避免一些cpu上的问题
@@ -30,7 +30,7 @@ aux_source_directory(src/advance SRC_ADVANCE)
 # Set all source
 # ${SRC_MEDIA_SOUP} ${SRC_SORT} ${SRC_HELPER} ${SRC_SAMPLE} ${SRC_TCP_DIR}
 set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE})
-add_executable(cpp_learn ${ALL_SOURCE})
+add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.
 find_package(Event REQUIRED)
@@ -47,4 +47,4 @@ include_directories(${INCLUDES})
 
 # Link dirs
 set(LIBRARIES ${EVENT_LIBRARIES})
-target_link_libraries(cpp_learn ${LIBRARIES})
+target_link_libraries(learn_cpp  ${LIBRARIES})
