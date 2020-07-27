@@ -1,9 +1,6 @@
-#include "../includes//advance/stl_transform.h"
+#include "../includes//advance/stl_iterator.h"
 
 int main() {
-    char num[] = "123";
-
-    findAllNumber(num, num);
-
+    printListWithIterator();
     return  0;
 }
