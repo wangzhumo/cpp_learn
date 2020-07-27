@@ -1,8 +1,11 @@
-#include "../../includes/advance/stl_container.h"
+#include "../includes//advance/stl_functor.h"
 
 int main() {
     int arrays[] = {3,5,6,1};
-    printCollection(arrays);
-    printMap();
+    sortLikeCpp(arrays);
+    sortTemplate(arrays);
+
+    int arrays2[] = {3,5,6,1};
+    sortFunctorTemplate(arrays2);
     return  0;
 }
