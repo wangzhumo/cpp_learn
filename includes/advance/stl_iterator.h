@@ -7,6 +7,7 @@
 
 #include <list>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 // 正向迭代器   iterator
@@ -30,7 +31,10 @@ void printListWithIterator(){
 
     cout << endl;
 
-    //
+    // 顶部pop
+    l.pop_front();
+    //[外部传入的参数](自己的参数)->返回值的类型 { 要执行的语句 }
+    for_each(l.begin(),l.end(),[](int& x)->void {cout<< x << " ";});
 }
 
 
