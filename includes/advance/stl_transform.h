@@ -41,4 +41,24 @@ void findNumberCount() {
     std::cout << result2 << std::endl;
 }
 
+// 使用递归，查找所有的排列组合
+// 这里使用的思路就是，首先确定第一个元素，然后递归确定其他的元素
+void findAllNumber(char* pStr,char* position){
+    std::cout << "参数 ：" << pStr << " ," << position <<  std::endl;
+    // 退出的条件
+    if (*position == '\0'){
+        std::cout << pStr << std::endl;
+    }else{
+        for (char* pChar = position;*pChar != '\0';pChar++){
+            // 意思是，先把开始的问题赋值给开始的索引
+            // 而后一直循环到这个子列表的结尾
+            std::swap(*pChar,*position);
+            // 接续查找后面的组合
+            findAllNumber(pStr,position+1);
+            // 交换回来
+            std::swap(*pChar, *position);
+        }
+    }
+
+}
 #endif //LEARN_CPP_STL_TRANSFORM_H
