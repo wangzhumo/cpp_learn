@@ -43,3 +43,9 @@
 `adapter.cpp`  适配器模式
 
 `generic_type.cpp`  泛型
+
+`stl_container.cpp`  容器list,map等
+
+`stl_functor.h`   仿函数
+
+`stl_transform.h`  lambda表达式/transform/find

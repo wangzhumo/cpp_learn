@@ -1,11 +1,13 @@
-#include "../includes//advance/stl_functor.h"
+#include "../includes//advance/stl_transform.h"
 
 int main() {
     int arrays[] = {3,5,6,1};
-    sortLikeCpp(arrays);
-    sortTemplate(arrays);
+    int arrays2[] = {30,50,60,10};
+    int result[5];
 
-    int arrays2[] = {3,5,6,1};
-    sortFunctorTemplate(arrays2);
+    printTransform(arrays, arrays2, result);
+
+
+    findNumberCount();
     return  0;
 }

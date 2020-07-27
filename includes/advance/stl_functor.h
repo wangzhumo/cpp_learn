@@ -61,4 +61,11 @@ void sortFunctorTemplate(int array[]) {
 }
 
 
+//int arrays[] = {3,5,6,1};
+//sortLikeCpp(arrays);
+//sortTemplate(arrays);
+//
+//int arrays2[] = {3,5,6,1};
+//sortFunctorTemplate(arrays2);
+
 #endif //LEARN_CPP_STL_FUNCTOR_H
