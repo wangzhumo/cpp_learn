@@ -1,6 +1,6 @@
-#include "../includes//advance/stl_iterator.h"
+#include "../includes/advance/thread_demo.h"
 
 int main() {
-    printListWithIterator();
+    threadTest();
     return  0;
 }
