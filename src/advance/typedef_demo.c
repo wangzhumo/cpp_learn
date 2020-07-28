@@ -3,9 +3,10 @@
 //
 #include "../../includes/advance/typedef_demo.h"
 
-void testForTypedef() {
+int testForTypedef() {
     // 普通的初始化
-    struct Person p = {"nameA", 19};
+    // struct Person p = {"nameA", 19};
     // 使用typedef的别名
     // mPre p2 = {"nameB", 20};
+    return 2001;
 }

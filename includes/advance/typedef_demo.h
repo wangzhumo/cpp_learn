@@ -10,13 +10,13 @@
 extern "C"{
 #endif
 
-struct Person {
-    char name[60];
-    int age;
-};
+//struct Person {
+//    char name[60];
+//    int age;
+//};
 
 
-void testForTypedef();
+int testForTypedef();
 
 #ifdef __cplusplus
 }

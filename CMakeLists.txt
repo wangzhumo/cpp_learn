@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 ## PROJECT NAME & VERSION
-project(learn_cpp VERSION 1.0.1 LANGUAGES CXX)
+project(learn_cpp VERSION 1.0.1 LANGUAGES C CXX)
 
 # 设置编译选项
 # 允许c++11标准、O3优化、多线程。match选项可避免一些cpu上的问题
@@ -16,7 +16,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 # Add flag
 set(CMAKE_BUILD_TYPE Debug)
 #set( CMAKE_BUILD_TYPE Release )
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall")
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build)
 
 # Add all binary files
