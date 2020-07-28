@@ -41,7 +41,7 @@ find_package(Event REQUIRED)
 INCLUDE(FindPkgConfig)
 
 # Include dir
-set(INCLUDES includes/advance/ ${EVENT_INCLUDE_DIR})
+set(INCLUDES  includes/advance/  ${EVENT_INCLUDE_DIR})
 include_directories(${INCLUDES})
 
 

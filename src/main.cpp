@@ -1,6 +1,7 @@
-#include "../includes/advance/thread_demo.h"
+#include "../includes/advance/for_cpp.h"
 
 int main() {
-    threadTest();
+    Person p = {"nameA",20};
+    testForTypedef();
     return  0;
 }
