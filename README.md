@@ -53,3 +53,22 @@
 `stl_iterator.h`  迭代器的使用
 
 `thread_demo.h` 线程的简单认识
+
+`typedef_demo.h` 使用typedef/ extern "C" 
+
+
+
+
+
+
+
+
+# NOTE
+
+### Cmake
+
+1. 其中LANGUAGES如果 C CPP 都有使用
+```cmake
+## PROJECT NAME & VERSION
+project(learn_cpp VERSION 1.0.1 LANGUAGES C CXX)
+```
