@@ -72,3 +72,18 @@
 ## PROJECT NAME & VERSION
 project(learn_cpp VERSION 1.0.1 LANGUAGES C CXX)
 ```
+
+### Code
+
+1.无符号的数据与有符号的数据做操作，会先吧有符号的转化为无符号再操作
+```c
+unsinged int a = 10;
+if (a - 20 > 0){
+    printf("大于 0 ");
+}else{
+    printf("小于 0 ");
+}
+
+shell:
+大于 0
+```
