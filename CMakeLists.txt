@@ -22,6 +22,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build)
 # Add all binary files
 aux_source_directory(src SRC_DIR)
 aux_source_directory(src/advance SRC_ADVANCE)
+aux_source_directory(src/basic SRC_BASIC)
 #aux_source_directory(src/sort SRC_SORT)
 #aux_source_directory(src/helper SRC_HELPER)
 #aux_source_directory(src/sample SRC_SAMPLE)
@@ -29,7 +30,7 @@ aux_source_directory(src/advance SRC_ADVANCE)
 
 # Set all source
 # ${SRC_MEDIA_SOUP} ${SRC_SORT} ${SRC_HELPER} ${SRC_SAMPLE} ${SRC_TCP_DIR}
-set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE})
+set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC})
 add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.
@@ -41,7 +42,7 @@ find_package(Event REQUIRED)
 INCLUDE(FindPkgConfig)
 
 # Include dir
-set(INCLUDES  includes/advance/  ${EVENT_INCLUDE_DIR})
+set(INCLUDES  includes/advance/ includes/basic/  ${EVENT_INCLUDE_DIR})
 include_directories(${INCLUDES})
 
 

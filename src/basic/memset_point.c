@@ -1,7 +1,7 @@
 //
 // Created by wangzhumo on 2020/7/29.
 //
-#include "../../includes/advance/memset_point.h"
+#include "../../includes/basic/memset_point.h"
 
 
 void allocateSpace(char **pp){

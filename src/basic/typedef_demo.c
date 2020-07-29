@@ -1,7 +1,7 @@
 //
 // Created by wangzhumo on 2020/7/28.
 //
-#include "../../includes/advance/typedef_demo.h"
+#include "../../includes/basic/typedef_demo.h"
 #include <stdio.h>
 
 void testForTypedef() {
