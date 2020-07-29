@@ -1,8 +1,7 @@
-#include "../includes/advance/typedef_demo.h"
+#include "../includes/advance/memset_point.h"
 
 
 int main() {
-    //Person p = {"nameA",20};
-    testForTypedef();
-    return  0;
+    test01();
+    return 0;
 }
