@@ -19,6 +19,10 @@ void allocateSpace(char **pp);
 void test01();
 
 
+void copyStringValue();
+
+void formatString();
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus end

@@ -1,7 +1,6 @@
 #include "../includes/advance/memset_point.h"
 
-
 int main() {
-    test01();
+    formatString();
     return 0;
 }

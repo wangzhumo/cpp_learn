@@ -56,7 +56,7 @@
 
 `typedef_demo.h` 使用typedef/ extern "C" 
 
-
+`memset_point.c` 指针赋值/字符串拷贝/格式化字符串
 
 
 
