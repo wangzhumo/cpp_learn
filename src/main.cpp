@@ -1,6 +1,6 @@
-#include "../includes/basic/memset_point.h"
+#include "../includes/basic/malloc_test.h"
 
 int main() {
-    formatString();
+    testRealloc();
     return 0;
 }
