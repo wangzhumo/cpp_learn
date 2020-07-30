@@ -10,6 +10,9 @@
 extern "C"{
 #endif
 
+#include <stdio.h>
+#include <stdlib.h>
+
 struct Person1 {
     char name[60];
     int age;
@@ -28,6 +31,8 @@ void testForTypedef();
 
 void testValueType();
 
+
+void testStructInHeap();
 #ifdef __cplusplus
 }
 #endif //__cplusplus

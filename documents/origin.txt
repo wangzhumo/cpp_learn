@@ -1,0 +1,4 @@
+姓名:王诛魔
+CPU:Ry zen 3700x
+GPU:NVIDIA RTX 2070 SUPER
+硬盘:HS-SSD-C2000 Pro
