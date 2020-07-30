@@ -8,7 +8,7 @@ project(learn_cpp VERSION 1.0.1 LANGUAGES C CXX)
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -march=native -O3 -pthread" )
 
 #设置编译器
-SET(CMAKE_CXX_COMPILER "g++")
+#SET(CMAKE_CXX_COMPILER "g++")
 
 # Add "Modules"
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
@@ -34,15 +34,16 @@ set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC})
 add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.
-find_package(Event REQUIRED)
+# find_package(Event REQUIRED)
 # find_package(SDL2 REQUIRED)
 # find_package(FFMPEG COMPONENTS avcodec avformat avutil swscale swresample avfilter)
 
 # Include module pkg-config for CMake.
-INCLUDE(FindPkgConfig)
+# INCLUDE(FindPkgConfig)
 
 # Include dir
-set(INCLUDES  includes/advance/ includes/basic/  ${EVENT_INCLUDE_DIR})
+# ${EVENT_INCLUDE_DIR}
+set(INCLUDES  includes/advance/ includes/basic/  )
 include_directories(${INCLUDES})
 
 
