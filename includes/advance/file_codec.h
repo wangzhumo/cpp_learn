@@ -13,7 +13,7 @@ extern "C"{
 #include <stdlib.h>
 #include <string.h>
 
-void encodeFile(char *fileName,char  *dstFile);
+void encodeFile(const char *fileName,const char  *dstFile);
 
 void decodeFile(char *fileName);
 
