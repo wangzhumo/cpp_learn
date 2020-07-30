@@ -1,6 +1,6 @@
-#include "../includes/basic/malloc_test.h"
+#include "../includes/basic/const_test.h"
 
 int main() {
-    testRealloc();
+    testConst();
     return 0;
 }
