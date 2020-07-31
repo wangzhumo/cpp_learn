@@ -15,7 +15,7 @@ extern "C"{
 
 void encodeFile(const char *fileName,const char  *dstFile);
 
-void decodeFile(char *fileName);
+void decodeFile(const char *fileName,const char  *dstFile);
 
 #ifdef __cplusplus
 }

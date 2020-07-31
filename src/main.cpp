@@ -4,6 +4,7 @@
 int main() {
     std::string fileName = "../documents/origin.txt";
     std::string outputName = "../documents/encode_file.txt";
-    encodeFile(fileName.c_str(),outputName.c_str());
+    //encodeFile(fileName.c_str(),outputName.c_str());
+    decodeFile(outputName.c_str(),fileName.c_str());
     return 0;
 }
