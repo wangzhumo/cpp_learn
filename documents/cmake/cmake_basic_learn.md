@@ -105,3 +105,18 @@ foreach (item RANG ${START} ${END} ${STEP})
 endforeach(item)
 ```
 
+
+
+
+
+### 函数
+
+```cmake
+function (<func_name> [arg1] [arg2] ... [argN])
+	COMMAND()
+endfunction(<func_name>)	
+
+# 调用
+func_name(args...)
+```
+
