@@ -22,6 +22,8 @@ void testConst();
 
 void testChangePerson(const struct Person *person);
 
+void testConstWithVar();
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus end

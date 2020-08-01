@@ -1,7 +1,6 @@
-#include "../includes/advance/func_point.h"
+#include "../includes/basic/const_test.h"
 
 int main() {
-    printInt(100);
-    testFuncPoint();
+    testConstWithVar();
     return 0;
 }
