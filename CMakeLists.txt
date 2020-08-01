@@ -10,6 +10,38 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -march=native -O3 -pthread" 
 #设置编译器
 #SET(CMAKE_CXX_COMPILER "g++")
 
+# Learn Cmake --------------------start------------------------
+message("\n--------------------start------------------------")
+# 创建一个变量
+set(var_name 1234567)
+# 打印
+message("var : ${var_name}")
+message("\n")
+
+# 创建一个列表
+set(list_test Python Java CPP Dart)
+# 打印
+message("list : ${list_test}")
+message("\n")
+
+# while循环
+set(str "")
+while (NOT str STREQUAL "111111")
+    set(str "${str}1")
+    message("str = ${str}")
+endwhile ()
+message("\n")
+
+# foreach循环
+foreach(item ${list_test})
+    message("${item}")
+endforeach()
+message("\n")
+
+message("--------------------end------------------------\n")
+# Learn Cmake --------------------end------------------------
+
+
 # Add "Modules"
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 
@@ -23,10 +55,12 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build)
 aux_source_directory(src SRC_DIR)
 aux_source_directory(src/advance SRC_ADVANCE)
 aux_source_directory(src/basic SRC_BASIC)
-#aux_source_directory(src/sort SRC_SORT)
-#aux_source_directory(src/helper SRC_HELPER)
-#aux_source_directory(src/sample SRC_SAMPLE)
-#aux_source_directory(src/tcp SRC_TCP_DIR)
+#[[
+aux_source_directory(src/sort SRC_SORT)
+aux_source_directory(src/helper SRC_HELPER)
+aux_source_directory(src/sample SRC_SAMPLE)
+aux_source_directory(src/tcp SRC_TCP_DIR)
+]]
 
 # Set all source
 # ${SRC_MEDIA_SOUP} ${SRC_SORT} ${SRC_HELPER} ${SRC_SAMPLE} ${SRC_TCP_DIR}
