@@ -150,3 +150,59 @@ target_link_libraries(learn_cpp  ${LIBRARIES})
 > binary_dir  是输出路径，一般不指定
 
 需要包含CMakeList.txt
+
+
+
+
+
+
+
+### 文件操作
+
+```cmake
+file(WRITE filename "message to write"... )
+file(APPEND filename "message to write"... )
+file(READ filename variable [LIMIT numBytes] [OFFSET offset] [HEX])
+file(STRINGS filename variable [LIMIT_COUNT num]
+[LIMIT_INPUT numBytes] [LIMIT_OUTPUT numBytes]
+[LENGTH_MINIMUM numBytes] [LENGTH_MAXIMUM numBytes]
+[NEWLINE_CONSUME] [REGEX regex]
+[NO_HEX_CONVERSION])
+file(GLOB variable [RELATIVE path] [globbing expressions]...)
+file(GLOB_RECURSE variable [RELATIVE path]
+[FOLLOW_SYMLINKS] [globbing expressions]...)
+file(REMOVE [file1 ...])
+file(REMOVE_RECURSE [file1 ...])
+file(MAKE_DIRECTORY [directory1 directory2 ...])
+file(RELATIVE_PATH variable directory file)
+file(TO_CMAKE_PATH path result)
+file(TO_NATIVE_PATH path result)
+file(DOWNLOAD url file [TIMEOUT timeout] [STATUS status] [LOG log]) 
+```
+
+
+
+### 字符串操作
+
+```cmake
+string(REGEX MATCH (regular_expression)(output variable) (input) [(input)...])
+string(REGEX MATCHALL (regular_expression)(output variable) (input) [(input)...])
+string(REGEX REPLACE (regular_expression)(replace_expression) 
+(output variable)
+(input) [(input)...])
+string(REPLACE (match_string)(replace_string) (output variable)
+(input) [(input)...])
+string(COMPARE EQUAL (string1) (string2) (output variable))
+string(COMPARE NOTEQUAL (string1) (string2) (output variable))
+string(COMPARE LESS (string1) (string2) (output variable))
+string(COMPARE GREATER (string1) (string2) (output variable))
+string(ASCII (number) [(number) ...] (output variable))
+string(CONFIGURE (string1) (output variable)[@ONLY] [ESCAPE_QUOTES])
+string(TOUPPER (string1) (output variable))
+string(TOLOWER (string1) (output variable))
+string(LENGTH (string) (output variable))
+string(SUBSTRING (string) (begin) (length) (output variable))
+string(STRIP (string) (output variable))
+string(RANDOM [LENGTH (length)] [ALPHABET (alphabet)] (output variable))
+```
+
