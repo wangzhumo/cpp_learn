@@ -13,7 +13,7 @@ namespace SortTestHelper {
 
     // 产生随机数
     int *generateRandomArray(int n, int start, int limit) {
-        assert(start < limit);
+        assert(start <= limit);
         int *arr = new int[n];
         //set random seed
         srand(time(NULL));
@@ -22,6 +22,16 @@ namespace SortTestHelper {
         }
         return arr;
     }
+
+    int *copyIntArray(int aArr[], int n) {
+        // 拷贝
+        int *arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = aArr[i];
+        }
+        return arr;
+    }
+
 
     // 打印
     template<typename T>
@@ -35,7 +45,7 @@ namespace SortTestHelper {
     // 是否大小顺序
     template<typename T>
     bool isSorted(T arr[], int n) {
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 return false;
             }
@@ -51,7 +61,7 @@ namespace SortTestHelper {
         std::clock_t endTime = clock();
 
         // 是否排序成功的？
-        assert(isSorted(arr,n));
+        assert(isSorted(arr, n));
         std::cout << sortName << " : " << double(endTime - startTime) / CLOCKS_PER_SEC << " s" << std::endl;
     }
 

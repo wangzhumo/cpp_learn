@@ -34,7 +34,7 @@ aux_source_directory(src/tcp SRC_TCP_DIR)
 
 # Set all source
 # ${SRC_MEDIA_SOUP} ${SRC_SORT} ${SRC_HELPER} ${SRC_SAMPLE} ${SRC_TCP_DIR}
-set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC} ${SRC_ALGORITHM_SORT} )
+set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC} ${SRC_ALGORITHM_SORT})
 add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.

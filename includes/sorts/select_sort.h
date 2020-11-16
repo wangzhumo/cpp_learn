@@ -9,20 +9,13 @@
 
 template<typename T>
 // 使用模板函数
-void selectionSort(T arr[], int number){
-    for (int i = 0; i < number;i++) {
-        // [i,n) 最小值的位置
-        int minValueIndex = i;
-        // 查找[i+1,n)位置中比自己还小的值。
-        for (int index = i+1;index < number;index ++){
-            if (arr[index] < arr[minValueIndex]){
-                minValueIndex = index;
-            }
-        }
-        // 完事了之后，交换位置。
-        std::swap(arr[i],arr[minValueIndex]);
-    }
-    // 完毕
-}
+class SelectionSort{
+public:
+    SelectionSort() = default;
+    ~SelectionSort() = default;
+
+    void selectionSort(T arr[], int number);
+};
+
 
 #endif //LEARN_CPP_SELECT_SORT_H
