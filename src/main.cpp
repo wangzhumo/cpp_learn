@@ -26,8 +26,8 @@ void insertSortDecSwap(T arr[], int n) {
 }
 
 int main() {
-    int n = 100000;
-    int *arrayA = SortTestHelper::generateRandomArray(n, 0, n);
+    int n = 10000;
+    int *arrayA = SortTestHelper::generateNearlyOrderArray(n, 300);
     int *arrayB = SortTestHelper::copyIntArray(arrayA,n);
     SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
     SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);

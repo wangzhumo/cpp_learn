@@ -23,6 +23,22 @@ namespace SortTestHelper {
         return arr;
     }
 
+    // 产生随机数
+    int *generateNearlyOrderArray(int n, int swapTimes) {
+        int *arr = new int[n];
+        //set random seed
+        srand(time(NULL));
+        for (int i = 0; i < n; i++) {
+            arr[i] = i;
+        }
+        for (int j = 0; j < swapTimes; ++j) {
+            int posX = rand() % n;
+            int posY = rand() % n;
+            std::swap(arr[posX], arr[posY]);
+        }
+        return arr;
+    }
+
     int *copyIntArray(int aArr[], int n) {
         // 拷贝
         int *arr = new int[n];
