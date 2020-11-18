@@ -2,6 +2,8 @@
 // Created by 王诛魔 on 2020-11-17.
 //
 
+#include <algorithm>
+#include <iostream>
 #include "../../../includes/sorts/merge_sort.h"
 
 
@@ -77,14 +79,18 @@ template<typename T>
 void _mergeSortBU(T *arr, int number) {
     // 每次对两个数组进行遍历,最小也应该是都是一个元素的集合比较
     for (int size = 1; size < number; size += size) {
+        std::cout << "Size : " << size << std::endl;
         // [0]  [1]
         // [0,1] [2,3]
         // [0,3] [4,7]
         // 这里的for循环，为了计算出每次的merge开始位置
         for (int i = 0; i < number; i += (2 * size)) {
+            std::cout << "left : " << i << "  mid : " << (i + size - 1)
+                      << "  right : " << std::min(i + (size * 2) - 1,number-1) << std::endl;
+
             // 合并之前的两个集合
             // arr[i,i+size-1]  arr[i+size,i+2*size-1]
-            _merge(arr, i, i + size - 1, i + (size * 2) - 1);
+            _merge(arr, i, i + size - 1, std::min(i + (size * 2) - 1,number-1));
         }
     }
 

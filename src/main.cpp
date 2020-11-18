@@ -8,7 +8,6 @@ template<typename T>
 void selectSort(T arr[], int n) {
     auto selectSort = new SelectionSort<int>();
     selectSort->selectionSort(arr, n);
-
     delete (selectSort);
 }
 
@@ -34,10 +33,11 @@ void mergeSort(T arr[], int n) {
 }
 
 int main() {
-    int n = 100000;
+    int n = 10;
     int *arrayA = SortTestHelper::generateRandomArray(n, 0, n);
     int *arrayB = SortTestHelper::copyIntArray(arrayA, n);
     int *arrayC = SortTestHelper::copyIntArray(arrayA, n);
+
     SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
     SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);
     SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayC, n);
