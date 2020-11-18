@@ -29,19 +29,18 @@ void insertSortDecSwap(T arr[], int n) {
 template<typename T>
 void mergeSort(T arr[], int n) {
     auto merge = new MergeSort<int>();
-    merge->mergeSort(arr, n);
+    merge->mergeSortBU(arr, n);
     delete merge;
 }
 
 int main() {
-    int n = 1000;
+    int n = 100000;
     int *arrayA = SortTestHelper::generateRandomArray(n, 0, n);
     int *arrayB = SortTestHelper::copyIntArray(arrayA, n);
     int *arrayC = SortTestHelper::copyIntArray(arrayA, n);
     SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
     SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);
-    SortTestHelper::testSort("Merge     Sort", mergeSort, arrayC, n);
-    SortTestHelper::printArray(arrayC,n);
+    SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayC, n);
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;

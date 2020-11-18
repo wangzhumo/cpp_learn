@@ -12,6 +12,8 @@ public:
     ~MergeSort() = default;
 
     void mergeSort(T arr[], int number);
+
+    void mergeSortBU(T arr[], int number);
 };
 
 #endif //LEARN_CPP_MERGE_SORT_H
