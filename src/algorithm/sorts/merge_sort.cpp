@@ -90,6 +90,7 @@ void _mergeSortBU(T *arr, int number) {
 
             // 合并之前的两个集合
             // arr[i,i+size-1]  arr[i+size,i+2*size-1]
+            // 此处 i + (size * 2) - 1 ，有可能会超出arr的边界，必须限制
             _merge(arr, i, i + size - 1, std::min(i + (size * 2) - 1,number-1));
         }
     }
