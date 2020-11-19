@@ -7,15 +7,15 @@
 
 
 #include <iostream>
-
-template<typename T>
 // 使用模板函数
+template<typename T>
 class QuickSort{
 public:
     QuickSort() = default;
     ~QuickSort() = default;
 
     void quickSort(T arr[], int number);
+    void quickSortDouble(T arr[], int number);
 };
 
 
