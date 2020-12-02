@@ -45,7 +45,20 @@ void MaxHeap<Item>::shiftUp(int index) {
 // 需要自上而下的移动
 template<class Item>
 void MaxHeap<Item>::shiftDown(int index) {
-
+    // 比较即可,如果左边没有元素，说明就没有子元素了。
+    while (index*2 <= count){
+        int k = 2*index; //当前要比较的子元素
+        if (k+1 < count && data[k+1] > data[k]){
+            // 如果有右边的元素，找出两个子元素的最大值
+            k+=1;
+        }
+        // 此时再进行比较
+        if (data[index] < data[k]){
+            // 如果自己比子元素小，则应该交换位置
+            std::swap(data[index] , data[k]);
+        }
+        index = k;
+    }
 }
 
 // 取出最大值
