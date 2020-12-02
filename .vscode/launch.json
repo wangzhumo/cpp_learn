@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/learn_cpp",
+            "args": [],
+        },
+        {
             "name": "(lldb) 启动",
             "type": "cppdbg",
             "request": "launch",
