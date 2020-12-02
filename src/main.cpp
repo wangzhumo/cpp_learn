@@ -70,6 +70,8 @@ int main() {
         maxHeap.insert(rand()%100);
     }
     maxHeap.testPrint();
+    std::cout << maxHeap.pop() << std::endl;
+    maxHeap.testPrint();
     delete &maxHeap;
     return 0;
 }

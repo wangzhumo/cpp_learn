@@ -56,6 +56,9 @@ void MaxHeap<Item>::shiftDown(int index) {
         if (data[index] < data[k]){
             // 如果自己比子元素小，则应该交换位置
             std::swap(data[index] , data[k]);
+        }else{
+            // 否则退出循环
+            break;
         }
         index = k;
     }
