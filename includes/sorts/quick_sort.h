@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include <ctime>
 // 使用模板函数
 template<typename T>
 class QuickSort{
