@@ -27,8 +27,6 @@ private:
 public:
     explicit IndexHeap(int capacity);
 
-    IndexHeap(Item arr[],int capacity);
-
     ~IndexHeap();
 
     // 当前容量
@@ -48,6 +46,18 @@ public:
 
     // 获取一个元素
     Item pop();
+
+
+private:
+    /**
+     *  排序新元素，使得这个新添加的元素满足完全堆的定义
+     */
+    void shiftUp(int index);
+
+    /**
+     *  移除一个元素
+     */
+    void shiftDown(int index);
 };
 
 

@@ -31,6 +31,19 @@ void IndexHeap<Item>::insert(int index, Item e) {
     count++;
 }
 
+template<class Item>
+void IndexHeap<Item>::shiftUp(int index) {
+    // 添加新的元素
+    // 一直比较，直到自己小于父元素
+    while (index > 1 && data[index / 2] < data[index]) {
+        //如果自己大于了父元素，那么交换位置，在索引堆中交换index即可
+        std::swap(data[index], data[index / 2]);
+        // 修改当前位置
+        index /= 2;
+    }
+}
+
+
 // Explicit template instantiation
 template
 class IndexHeap<int>;
