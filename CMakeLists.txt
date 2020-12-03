@@ -26,16 +26,13 @@ aux_source_directory(src/advance SRC_ADVANCE)
 aux_source_directory(src/basic SRC_BASIC)
 aux_source_directory(src/algorithm/sorts SRC_ALGORITHM_SORT)
 aux_source_directory(src/algorithm/heap SRC_ALGORITHM_HEAP)
-#[[
-aux_source_directory(src/sort SRC_SORT)
-aux_source_directory(src/helper SRC_HELPER)
-aux_source_directory(src/sample SRC_SAMPLE)
-aux_source_directory(src/tcp SRC_TCP_DIR)
-]]
+aux_source_directory(src/algorithm/search SRC_ALGORITHM_SEARCH)
+
 
 # Set all source
-# ${SRC_MEDIA_SOUP} ${SRC_SORT} ${SRC_HELPER} ${SRC_SAMPLE} ${SRC_TCP_DIR}
-set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC} ${SRC_ALGORITHM_SORT} ${SRC_ALGORITHM_HEAP})
+set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC}
+        ${SRC_ALGORITHM_SORT} ${SRC_ALGORITHM_HEAP}
+        ${SRC_ALGORITHM_SEARCH})
 add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.
@@ -48,7 +45,7 @@ add_executable(learn_cpp ${ALL_SOURCE})
 
 # Include dir
 # ${EVENT_INCLUDE_DIR}
-set(INCLUDES includes/advance/ includes/basic/ includes/sorts/ includes/heap/)
+set(INCLUDES includes/advance/ includes/basic/ includes/sorts/ includes/heap/ includes/search/)
 include_directories(${INCLUDES})
 
 
