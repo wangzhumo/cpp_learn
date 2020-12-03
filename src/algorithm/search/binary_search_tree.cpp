@@ -82,7 +82,7 @@ void BinarySearchTree<Key, Value>::insertWhile(Key key, Value value) {
 
 // 递归调用，node每次指定
 template<typename Key, typename Value>
-BinaryNode<Key, Value> *search(BinaryNode<Key, Value> *node, Key key) {
+BinaryNode<Key, Value> *searchInner(BinaryNode<Key, Value> *node, Key key) {
     // 如果为空，那就是没找到
     if (node == nullptr) {
         return nullptr;
@@ -102,11 +102,7 @@ BinaryNode<Key, Value> *search(BinaryNode<Key, Value> *node, Key key) {
 template<typename Key, typename Value>
 BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::search(Key key) {
     // 定义一个p
-    BinaryNode<Key, Value> *p = root;
-    BinaryNode<Key, Value> *target;
-    while (target != nullptr || p == nullptr) {
-        //
-    }
+    return searchInner(root, key);
 }
 
 
