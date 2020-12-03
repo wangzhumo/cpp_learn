@@ -5,11 +5,14 @@
 #ifndef LEARN_CPP_BINARY_SEARCH_TREE_H
 #define LEARN_CPP_BINARY_SEARCH_TREE_H
 
-template<class Key, class Value>
+template<typename Key, typename Value>
 class BinarySearchTree {
 
+public:
+    BinarySearchTree();
 
-private:
+    ~BinarySearchTree();
+
     struct Node {
         Key key;
         Value value;
@@ -24,14 +27,6 @@ private:
         }
     };
 
-    Node *root;  //根节点，从这里出发
-    int count;  //现在的大小
-
-public:
-    BinarySearchTree();
-
-    ~BinarySearchTree();
-
     int size() {
         return count;
     }
@@ -39,6 +34,20 @@ public:
     bool isEmpty() {
         return count == 0;
     }
+
+    void insert(Key key, Value value);
+
+    void insertWhile(Key key, Value value);
+
+private:
+    Node *root;  //根节点，从这里出发
+    int count;  //现在的大小
+
+
+private:
+    // root为根，插入一个元素
+    // Node *insert(Node *root, Key key, Value value);
+
 };
 
 
