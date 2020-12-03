@@ -22,6 +22,7 @@ void BinarySearchTree<Key, Value>::insert(Key key, Value value) {
     //this->root = insert(root, key, value);
 }
 
+
 //template<typename Key, typename Value>
 //BinarySearchTree::Node*
 //BinarySearchTree<Key, Value>::insert(Node *root, Key key, Value value) {
@@ -47,12 +48,15 @@ void BinarySearchTree<Key, Value>::insert(Key key, Value value) {
 //}
 
 
+
+
+
 template<typename Key, typename Value>
 void BinarySearchTree<Key, Value>::insertWhile(Key key, Value value) {
     // 通过for循环来加入元素
-    BinarySearchTree<Key, Value>::Node *p = root;
+    BinaryNode<Key, Value> *p = root;
     // pre用于记录上一个可用的node,因为p被用于中断条件使用
-    BinarySearchTree<Key, Value>::Node *pre = p;
+    BinaryNode<Key, Value> *pre = p;
     // 开始循环，如果p不为空，就一直循环
     while (p) {
         if (key > p->key) {
@@ -70,12 +74,30 @@ void BinarySearchTree<Key, Value>::insertWhile(Key key, Value value) {
     }
     // 如果是null,或者查到一个p的值是可以插入的了
     if (key > pre->key) {
-        pre->right = new BinarySearchTree::Node(key, value);
+        pre->right = new BinaryNode<Key, Value>(key, value);
     } else if (key < pre->key) {
-        pre->left = new BinarySearchTree::Node(key, value);
+        pre->left = new BinaryNode<Key, Value>(key, value);
     } else {
         // 直接覆盖value即可
         pre->value = value;
     }
 
 }
+
+template<typename Key, typename Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::insert(BinaryNode<Key, Value> *root, Key key, Value value) {
+    return nullptr;
+}
+
+
+template<typename Key, typename Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::search(Key key) {
+
+}
+
+template<typename Key, typename Value>
+bool BinarySearchTree<Key, Value>::contain(Key key) {
+
+}
+
+

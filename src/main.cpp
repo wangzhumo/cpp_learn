@@ -5,6 +5,8 @@
 #include "../includes/sorts/quick_sort.h"
 #include "../includes/sorts/select_sort.h"
 #include "../includes/sorts/sort_test_helper.h"
+#include "../includes/search/binary_search.h"
+#include "../includes/search/binary_search_tree.h"
 
 template <typename T>
 void selectSort(T arr[], int n) {
@@ -74,7 +76,8 @@ int main() {
     // SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
     // SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD,n);
     // SortTestHelper::testSort("IndexHeap    Sort", indexHeapSort, arrayC, n);
-
+    BinarySearch<int> binarySearchTree = BinarySearch<int>();
+    binarySearchTree.binarySearch(arrayA,n,998);
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;

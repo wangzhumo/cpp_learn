@@ -5,7 +5,7 @@
 #ifndef LEARN_CPP_BINARY_SEARCH_H
 #define LEARN_CPP_BINARY_SEARCH_H
 
-template <class T>
+template<typename T>
 class BinarySearch {
 
 public:
@@ -13,8 +13,7 @@ public:
 
     ~BinarySearch() = default;
 
-    int binarySearch(T aar[],int n,T target);
+    int binarySearch(T arr[], int n, T target);
 };
-
 
 #endif //LEARN_CPP_BINARY_SEARCH_H

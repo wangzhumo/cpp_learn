@@ -28,6 +28,8 @@ int BinarySearch<T>::binarySearch(T arr[], int n, T target) {
     return -1;
 }
 
+
+
 // Explicit template instantiation
 template
 class BinarySearch<int>;
