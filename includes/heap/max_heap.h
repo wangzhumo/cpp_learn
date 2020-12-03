@@ -21,6 +21,8 @@ private:
 public:
     explicit MaxHeap(int capacity);
 
+    MaxHeap(Item arr[],int capacity);
+
     ~MaxHeap();
 
     // 当前容量

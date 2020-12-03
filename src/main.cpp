@@ -47,31 +47,31 @@ void quickSortDouble(T arr[], int n) {
     delete quick;
 }
 
+template <typename T>
+void heapSort(T arr[], int n) {
+    MaxHeap<int> maxHeap =  MaxHeap<int>(arr,n);
+    for (int i = n-1; i >= 0; i--) {
+        arr[i] = maxHeap.pop();
+    }
+}
+
 int main() {
-    int n = 100000;
+    int n = 10000000;
     int* arrayA = SortTestHelper::generateRandomArray(n, 0, n);
     int* arrayB = SortTestHelper::copyIntArray(arrayA, n);
     int* arrayC = SortTestHelper::copyIntArray(arrayA, n);
     int* arrayD = SortTestHelper::copyIntArray(arrayA, n);
 
-    // SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
+    //SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
     // SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);
-    //SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayB, n);
-    //SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
-    //SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD, n);
+    // SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayB, n);
+    // SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
+     SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD, n);
+     SortTestHelper::testSort("Heap         Sort", heapSort, arrayC, n);
+
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;
     delete[] arrayD;
-
-    MaxHeap<int> maxHeap =  MaxHeap<int>(16);
-    srand(time(NULL));
-    for (int i = 0; i < 15; i++) {
-        maxHeap.insert(rand()%100);
-    }
-    maxHeap.testPrint();
-    std::cout << maxHeap.pop() << std::endl;
-    maxHeap.testPrint();
-    delete &maxHeap;
     return 0;
 }

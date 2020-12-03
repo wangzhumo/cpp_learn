@@ -5,6 +5,21 @@
 #include "../../../includes/heap/max_heap.h"
 
 
+/**
+ * 其中如果从０开始构建一个堆
+ * parent(i) = (i-1)/2
+ * left child(i) = 2 * i + 1
+ * right child(i) = 2 * i +２
+ * 最后一个堆就是: (count - 1) /2
+ *
+ *
+ * 如果是从1开始的
+ * parent(i) = i/2
+ * left child(i) = 2 * i
+ * right child(i) = 2 * i +1
+ * 最后一个堆就是: count /2
+ */
+
 template<class Item>
 MaxHeap<Item>::MaxHeap(int capacity) {
     // 初始化开辟的元素个数
@@ -12,6 +27,22 @@ MaxHeap<Item>::MaxHeap(int capacity) {
     count = 0;
     this->capacity = capacity;
 }
+
+template<class Item>
+MaxHeap<Item>::MaxHeap(Item *arr, int capacity) {
+    data = new Item[capacity + 1];
+    this->capacity = capacity;
+    for (int i = 0; i < capacity; i++) {
+        data[i+1] = arr[i];
+    }
+    count = capacity;
+    // 此时我们还需要对这个heap进行排序.
+    // 也就是找到最后一个堆(capacity / 2)，开始排序，一直排序到1
+    for (int j = capacity/2; j >= 1; j--) {
+        shiftDown(j);
+    }
+}
+
 
 template<class Item>
 MaxHeap<Item>::~MaxHeap() {
@@ -77,6 +108,7 @@ Item MaxHeap<Item>::pop() {
     shiftDown(1);
     return item;
 }
+
 
 
 // Explicit template instantiation
