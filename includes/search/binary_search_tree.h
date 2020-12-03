@@ -29,17 +29,17 @@ public:
 
     bool contain(Key key);
 
-    BinaryNode<Key,Value>* search(Key key);
+    BinaryNode<Key, Value> *search(Key key);
 
-    // root为根，插入一个元素
-    BinaryNode<Key,Value>* insert(BinaryNode<Key,Value> *root, Key key, Value value);
 
 private:
-    BinaryNode<Key,Value> *root;  //根节点，从这里出发
+    BinaryNode<Key, Value> *root;  //根节点，从这里出发
     int count;  //现在的大小
+
+private:
+    // root为根，插入一个元素
+    BinaryNode<Key, Value> *insert(BinaryNode<Key, Value> *root, Key key, Value value);
 };
-
-
 
 
 #endif //LEARN_CPP_BINARY_SEARCH_TREE_H

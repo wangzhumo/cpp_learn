@@ -19,36 +19,32 @@ BinarySearchTree<Key, Value>::~BinarySearchTree() {
 // 插入一个元素
 template<typename Key, typename Value>
 void BinarySearchTree<Key, Value>::insert(Key key, Value value) {
-    //this->root = insert(root, key, value);
+    this->root = insert(root, key, value);
 }
 
 
-//template<typename Key, typename Value>
-//BinarySearchTree::Node*
-//BinarySearchTree<Key, Value>::insert(Node *root, Key key, Value value) {
-//    // 如果root为空，则直接插入即可
-//    if (root == nullptr) {
-//        // 直接返回，
-//        count++;
-//        // 此处直接返回，给上一个递归
-//        return new BinarySearchTree::Node(key, value);
-//    }
-//    // 如果不为空，则判断即可
-//    if (key == root->key) {
-//        // 如果相同，直接更新即可
-//        root->value = value;
-//    } else if (key < root->key) {
-//        // 如果小于root值，则应该插入左边
-//        root->left = insert(root->left, key, value);
-//    } else {
-//        // 否则插入右边
-//        root->right = insert(root->right, key, value);
-//    }
-//    return root;
-//}
-
-
-
+template<typename Key, typename Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::insert(BinaryNode<Key, Value> *root, Key key, Value value) {
+    // 如果root为空，则直接插入即可
+    if (root == nullptr) {
+        // 直接返回，
+        count++;
+        // 此处直接返回，给上一个递归
+        return new BinaryNode<Key, Value>(key, value);
+    }
+    // 如果不为空，则判断即可
+    if (key == root->key) {
+        // 如果相同，直接更新即可
+        root->value = value;
+    } else if (key < root->key) {
+        // 如果小于root值，则应该插入左边
+        root->left = insert(root->left, key, value);
+    } else {
+        // 否则插入右边
+        root->right = insert(root->right, key, value);
+    }
+    return root;
+}
 
 
 template<typename Key, typename Value>
@@ -84,20 +80,60 @@ void BinarySearchTree<Key, Value>::insertWhile(Key key, Value value) {
 
 }
 
+// 递归调用，node每次指定
 template<typename Key, typename Value>
-BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::insert(BinaryNode<Key, Value> *root, Key key, Value value) {
-    return nullptr;
+BinaryNode<Key, Value> *search(BinaryNode<Key, Value> *node, Key key) {
+    // 如果为空，那就是没找到
+    if (node == nullptr) {
+        return nullptr;
+    }
+    if (key == node->getKey()) {
+        // 直接返回
+        return node;
+    } else if (key < node->getKey()) {
+        // 如果我小于当前的node,继续查找左节点
+        return search(node->getLeft(), key);
+    } else {
+        return search(node->getRight(), key);
+    }
 }
 
 
 template<typename Key, typename Value>
 BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::search(Key key) {
-
+    // 定义一个p
+    BinaryNode<Key, Value> *p = root;
+    BinaryNode<Key, Value> *target;
+    while (target != nullptr || p == nullptr) {
+        //
+    }
 }
+
+
+// 递归查询,所以需要外部指定当前要查找的node
+template<typename Key, typename Value>
+bool containInner(BinaryNode<Key, Value> *node, Key key) {
+    // 退出条件之一 - 无法查询到
+    if (node == nullptr) {
+        return false;
+    }
+    // 退出条件之二 - 已经查询到了
+    if (key == node->getKey()) {
+        // 直接返回即可
+        return true;
+    } else if (key < node->getKey()) {
+        // 如果大于我，我就去左边去查找。
+        return containInner(node->getLeft(), key);
+    } else {
+        return containInner(node->getRight(), key);
+    }
+}
+
 
 template<typename Key, typename Value>
 bool BinarySearchTree<Key, Value>::contain(Key key) {
-
+    return containInner(key);
 }
+
 
 
