@@ -13,7 +13,7 @@ public:
 
     ~BinarySearch() = default;
 
-    int binarySearch(T aar[],int n,T target)
+    int binarySearch(T aar[],int n,T target);
 };
 
 

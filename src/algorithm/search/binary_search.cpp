@@ -6,7 +6,7 @@
 
 
 template<class T>
-int BinarySearch<T>::binarySearch(T *aar, int n, T target) {
+int BinarySearch<T>::binarySearch(T arr[], int n, T target) {
     // 首先定义查找的区间 [l,r] 前闭后闭
     int l = 0;
     int r = n - 1;
