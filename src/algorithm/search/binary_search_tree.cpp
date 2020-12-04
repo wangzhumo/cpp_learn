@@ -3,6 +3,7 @@
 //
 
 
+#include <iostream>
 #include "../../../includes/search/binary_search_tree.h"
 
 template<typename Key, typename Value>
@@ -11,10 +12,27 @@ BinarySearchTree<Key, Value>::BinarySearchTree() {
     this->count = 0;
 }
 
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::destroy(BinaryNode<Key, Value> *node) {
+    // 采用后序遍历的形式，释放
+    // 只要不为空就继续释放
+    if (node != nullptr) {
+        // 此时我们是一个后序遍历，先把left,right释放掉
+        destroy(node->getLeft());
+        destroy(node->getRight());
+        // 最后把自己释放
+        delete node;
+        count--;
+    }
+}
+
+
 template<typename Key, typename Value>
 BinarySearchTree<Key, Value>::~BinarySearchTree() {
-    //TODO 清除数据
+    destroy(root);
 }
+
 
 // 插入一个元素
 template<typename Key, typename Value>
@@ -128,13 +146,64 @@ bool containInner(BinaryNode<Key, Value> *node, Key key) {
 
 template<typename Key, typename Value>
 bool BinarySearchTree<Key, Value>::contain(Key key) {
-    return containInner(root,key);
+    return containInner(root, key);
+}
+
+template<class Key, class Value>
+void preOrderInner(BinaryNode<Key, Value> *node) {
+    // 只要不为空就继续遍历
+    if (node != nullptr) {
+        // 此时我们是一个前序遍历，先把自己先打印出来
+        std::cout << node->getKey() << std::endl;
+        // 然后分别打印 left , right,他们也会先把自己打印出来
+        preOrderInner(node->getLeft());
+        preOrderInner(node->getRight());
+    }
+}
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::preOrder() {
+    preOrderInner(root);
+}
+
+template<class Key, class Value>
+void inOrderInner(BinaryNode<Key, Value> *node) {
+    // 只要不为空就继续遍历
+    if (node != nullptr) {
+        // 此时我们是一个中序遍历，先把left打印出来
+        inOrderInner(node->getLeft());
+        std::cout << node->getKey() << std::endl;
+        // 然后分别打印 right
+        inOrderInner(node->getRight());
+    }
+}
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::inOrder() {
+    inOrderInner(root);
+}
+
+template<class Key, class Value>
+void postOrderInner(BinaryNode<Key, Value> *node) {
+    // 只要不为空就继续遍历
+    if (node != nullptr) {
+        // 此时我们是一个后序遍历，先把left,right打印出来
+        postOrderInner(node->getLeft());
+        postOrderInner(node->getRight());
+        // 最后把自己打印出来
+        std::cout << node->getKey() << std::endl;
+    }
+}
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::postOrder() {
+    postOrderInner(root);
 }
 
 
 // Explicit template instantiation
 template
-class BinarySearchTree<std::string,int>;
+class BinarySearchTree<std::string, int>;
 
 
 
