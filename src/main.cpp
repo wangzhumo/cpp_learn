@@ -102,8 +102,7 @@ void testBinarySearchTree() {
 
 
         std::cout << "BinarySearchTree , min: " << binarySearchTree.min()->getKey() << std::endl;
-        std::cout << "BinarySearchTree , min: " << binarySearchTree.max()->getKey() << std::endl;
-
+        std::cout << "BinarySearchTree , max: " << binarySearchTree.max()->getKey() << std::endl;
     }
 }
 

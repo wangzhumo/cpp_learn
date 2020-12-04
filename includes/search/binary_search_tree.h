@@ -33,7 +33,9 @@ public:
     bool contain(Key key);
 
     BinaryNode<Key, Value> *search(Key key);
+
     BinaryNode<Key, Value> *min();
+
     BinaryNode<Key, Value> *max();
 
     // 前序遍历
@@ -48,6 +50,23 @@ public:
     // 层序遍历
     void levelOrder();
 
+    /**
+     * 假定要删除一个元素 d ，且这个元素左右节点都存在
+     * 删除完毕之后，需要有一个元素s去替代d
+     * s = min(d->right)
+     * 就是说找到他右面节点之中最小的那个元素即可
+     *
+     * 满足：
+     *  1.因为是右节点中的数据，则一定比左节点的所有值大
+     *  2.又因为是右节点中的最小值，一定是比这个右节点小的
+     *
+     */
+    void remove(Key k);
+
+    void removeMin();
+
+    void removeMax();
+
 
 private:
     BinaryNode<Key, Value> *root;  //根节点，从这里出发
@@ -59,6 +78,12 @@ private:
 
     // 递归释放
     void destroy(BinaryNode<Key, Value> *node);
+
+    // 递归删除最小值
+    BinaryNode<Key, Value> *removeMinInner(BinaryNode<Key, Value> *node);
+
+    // 递归删除最大值
+    BinaryNode<Key, Value> *removeMaxInner(BinaryNode<Key, Value> *node);
 };
 
 

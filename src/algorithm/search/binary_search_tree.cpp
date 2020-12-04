@@ -224,7 +224,7 @@ void BinarySearchTree<Key, Value>::levelOrder() {
     }
 }
 
-//
+// 递归查找最小值
 template<class Key, class Value>
 BinaryNode<Key, Value> *minInner(BinaryNode<Key, Value> *node) {
     // 直接递归
@@ -263,6 +263,64 @@ BinaryNode<Key, Value> *maxInner(BinaryNode<Key, Value> *node) {
 template<class Key, class Value>
 BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::max() {
     return maxInner(root);
+}
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::remove(Key k) {
+
+}
+
+// 递归
+template<class Key, class Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::removeMinInner(BinaryNode<Key, Value> *node) {
+    // 如果遇到没有left节点的，执行删除即可
+    if (node->getLeft() == nullptr) {
+        // 把这right的值记录下来，用于返回，为null时不会更新node的值
+        BinaryNode<Key, Value> *rightNode = node->getRight();
+        // 如果这个节点没有left节点了，说明它就是最小值，删除即可
+        delete node;
+        count--;
+        return rightNode;
+    }
+
+    // 如果getLeft不为空，则继续往下
+    node->setLeft(removeMinInner(node->getLeft()));
+    // 这里的返回是为了递归的时候，给上一步的setLeft赋值
+    // 1.下一个会成功删除则 setLeft 会赋值为下一个的Right节点
+    // 2.下一个没有成功删除，则返回的是node自己，setLeft还是原来的自己
+    return node;
+}
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::removeMin() {
+    removeMinInner(root);
+}
+
+// 递归
+template<class Key, class Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::removeMaxInner(BinaryNode<Key, Value> *node) {
+    // 如果遇到没有left节点的，执行删除即可
+    if (node->getRight() == nullptr) {
+        // 把这right的值记录下来，用于返回，为null时不会更新node的值
+        BinaryNode<Key, Value> *leftNode = node->getLeft();
+        // 如果这个节点没有left节点了，说明它就是最小值，删除即可
+        delete node;
+        count--;
+        return leftNode;
+    }
+
+    // 如果getLeft不为空，则继续往下
+    node->setRight(removeMaxInner(node->getRight()));
+    // 这里的返回是为了递归的时候，给上一步的setRight赋值
+    // 1.下一个会成功删除则 setRight 会赋值为下一个的Left节点
+    // 2.下一个没有成功删除，则返回的是node自己，setRight还是原来的自己
+    return node;
+}
+
+
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::removeMax() {
+    removeMaxInner(root);
 }
 
 
