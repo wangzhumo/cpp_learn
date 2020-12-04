@@ -137,7 +137,7 @@ bool containInner(BinaryNode<Key, Value> *node, Key key) {
 
 template<typename Key, typename Value>
 bool BinarySearchTree<Key, Value>::contain(Key key) {
-    return containInner(key);
+    return containInner(root,key);
 }
 
 
