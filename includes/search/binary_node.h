@@ -19,6 +19,8 @@ public:
 
     BinaryNode<Key, Value>(Key k, Value v);
 
+    BinaryNode<Key, Value>(BinaryNode<Key, Value> *node);
+
     Value getValue();
     Key getKey();
     void setValue(Value v);

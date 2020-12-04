@@ -267,7 +267,60 @@ BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::max() {
 
 template<class Key, class Value>
 void BinarySearchTree<Key, Value>::remove(Key k) {
+    root = remove(root, k);
+}
 
+template<class Key, class Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::remove(BinaryNode<Key, Value> *node, Key k) {
+    // break
+    if (node == nullptr) {
+        return nullptr;
+    }
+    // find node
+    if (node->getKey() > k) {
+        // 大于的话去左边
+        node->setLeft(remove(node->getLeft(), k));
+        return node;
+    } else if (node->getKey() < k) {
+        node->setRight(remove(node->getRight(), k));
+        return node;
+    } else {
+        // 找到了这个key,判断左右孩子的状态
+        if (node->getLeft() == nullptr) {
+            // 如果为空,保存右边节点，并且赋值
+            BinaryNode<Key, Value> *rightNode = node->getRight();
+            // 删除这个node
+            delete node;
+            count--;
+            return rightNode;
+        }
+        if (node->getRight() == nullptr) {
+            // 如果为空,保存右边节点，并且赋值
+            BinaryNode<Key, Value> *leftNode = node->getLeft();
+            // 删除这个node
+            delete node;
+            count--;
+            return leftNode;
+        }
+
+        // 上面的情况是，只有左边或者右边，如果下来说明都有node
+        // 使用之前的删除法
+        // 1.确定要删除的节点,find Min value,copy node
+        BinaryNode<Key, Value> *minRight = new BinaryNode<Key, Value>(minInner(node->getRight()));
+        count++;
+
+        // 2.给minRight设置新的right,left
+        minRight->setRight(removeMinInner(node->getRight()));
+        minRight->setLeft(node->getLeft());
+
+        // 3.删除node
+        delete node;
+        count--;
+
+        // 4.返回新的node节点,递归的上一步setLeft
+        // 或者setRight会把minRight添加到树中
+        return minRight;
+    }
 }
 
 // 递归

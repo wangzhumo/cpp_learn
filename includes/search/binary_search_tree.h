@@ -60,6 +60,9 @@ public:
      *  1.因为是右节点中的数据，则一定比左节点的所有值大
      *  2.又因为是右节点中的最小值，一定是比这个右节点小的
      *
+     * (deleteMin 会在删除的同时把元素移动重新排序)
+     * s-right = deleteMin(d->right)
+     * s-left = d-left
      */
     void remove(Key k);
 
@@ -84,6 +87,9 @@ private:
 
     // 递归删除最大值
     BinaryNode<Key, Value> *removeMaxInner(BinaryNode<Key, Value> *node);
+
+    // 递归删除指定元素
+    BinaryNode<Key, Value> *remove(BinaryNode<Key, Value> *node,Key k);
 };
 
 

@@ -13,6 +13,14 @@ BinaryNode<Key, Value>::BinaryNode(Key key, Value value) {
     this->right = nullptr;
 }
 
+template<class Key, class Value>
+BinaryNode<Key, Value>::BinaryNode(BinaryNode<Key, Value> *node) {
+    this->key = node->getKey();
+    this->value = node->getValue();
+    this->left = node->getLeft();
+    this->right = node->getRight();
+}
+
 
 template<class Key, class Value>
 Value BinaryNode<Key, Value>::getValue() {
@@ -57,7 +65,6 @@ void BinaryNode<Key, Value>::setKey(Key k) {
 }
 
 
-
 // Explicit template instantiation
 template
-class BinaryNode<std::string,int>;
+class BinaryNode<std::string, int>;
