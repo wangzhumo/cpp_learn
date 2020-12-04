@@ -200,6 +200,71 @@ void BinarySearchTree<Key, Value>::postOrder() {
     postOrderInner(root);
 }
 
+template<class Key, class Value>
+void BinarySearchTree<Key, Value>::levelOrder() {
+    // 层序的遍历，借助队列进行遍历
+    std::queue<BinaryNode<Key, Value> *> queue;
+    queue.push(root);
+    // 先把root放进去，而后依次入队,为空后停止遍历
+    while (!queue.empty()) {
+        // 拿出一个元素
+        BinaryNode<Key, Value> *p = queue.front();
+        queue.pop();
+
+        // 做遍历要执行的操作，如打印
+        std::cout << p->getKey() << std::endl;
+
+        // 此时把p中的元素入队
+        if (p->getLeft() != nullptr) {
+            queue.push(p->getLeft());
+        }
+        if (p->getRight() != nullptr) {
+            queue.push(p->getRight());
+        }
+    }
+}
+
+//
+template<class Key, class Value>
+BinaryNode<Key, Value> *minInner(BinaryNode<Key, Value> *node) {
+    // 直接递归
+    // 退出条件是一个左节点没有子节点了，它就是最小值
+    if (node->getLeft() == nullptr) {
+        return node;
+    }
+    // 否则就一直往下找即可
+    return minInner(node->getLeft());
+}
+
+
+template<class Key, class Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::min() {
+    BinaryNode<Key, Value> *p = root;
+    while (p != nullptr && p->getLeft() != nullptr) {
+        // 如果不为空，就一直向下
+        p = p->getLeft();
+    }
+    // 递归的查找最小值
+    // minInner(root);
+    return p;
+}
+
+template<class Key, class Value>
+BinaryNode<Key, Value> *maxInner(BinaryNode<Key, Value> *node) {
+    // 直接递归.
+    // 退出条件是一个右节点没有子节点了，它就是最大值
+    if (node->getRight() == nullptr) {
+        return node;
+    }
+    // 否则就一直往下找即可
+    return maxInner(node->getRight());
+}
+
+template<class Key, class Value>
+BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::max() {
+    return maxInner(root);
+}
+
 
 // Explicit template instantiation
 template

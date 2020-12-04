@@ -7,6 +7,7 @@
 #define LEARN_CPP_BINARY_SEARCH_TREE_H
 
 #include "binary_node.h"
+#include <queue>
 
 
 template<class Key, class Value>
@@ -32,6 +33,8 @@ public:
     bool contain(Key key);
 
     BinaryNode<Key, Value> *search(Key key);
+    BinaryNode<Key, Value> *min();
+    BinaryNode<Key, Value> *max();
 
     // 前序遍历
     void preOrder();
@@ -41,6 +44,9 @@ public:
 
     // 后序遍历 - 先遍历左右子树，而后到自己 （常用于释放的操作）
     void postOrder();
+
+    // 层序遍历
+    void levelOrder();
 
 
 private:

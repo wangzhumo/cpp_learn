@@ -67,7 +67,7 @@ void indexHeapSort(T arr[], int n) {
 }
 
 
-void testBinarySearchTree(){
+void testBinarySearchTree() {
     std::string fileName = "/Users/wangzhumo/Private/learncpp/documents/bible.txt";
 
     std::vector<std::string> words;
@@ -99,6 +99,11 @@ void testBinarySearchTree(){
 
         std::cout << "BinarySearchTree , time: " << double(endTime - startTime) / CLOCKS_PER_SEC << " s." << std::endl;
         std::cout << std::endl;
+
+
+        std::cout << "BinarySearchTree , min: " << binarySearchTree.min()->getKey() << std::endl;
+        std::cout << "BinarySearchTree , min: " << binarySearchTree.max()->getKey() << std::endl;
+
     }
 }
 
