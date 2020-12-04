@@ -55,3 +55,9 @@ template<class Key, class Value>
 void BinaryNode<Key, Value>::setKey(Key k) {
     this->key = k;
 }
+
+
+
+// Explicit template instantiation
+template
+class BinaryNode<std::string,int>;

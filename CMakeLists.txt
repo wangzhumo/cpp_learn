@@ -8,7 +8,7 @@ project(learn_cpp VERSION 1.0.1 LANGUAGES C CXX)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -march=native -O3 -pthread")
 
 #设置编译器
-#SET(CMAKE_CXX_COMPILER "g++")
+SET(CMAKE_CXX_COMPILER "g++")
 
 
 # Add "Modules"

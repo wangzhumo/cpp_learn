@@ -6,7 +6,7 @@
 #define LEARN_CPP_BINARY_SEARCH_TREE_H
 
 #include "binary_node.h"
-#include <string>
+
 
 template<class Key, class Value>
 class BinarySearchTree {
@@ -31,8 +31,6 @@ public:
     bool contain(Key key);
 
     BinaryNode<Key, Value> *search(Key key);
-
-    Value* searchValue(Key key);
 
 
 private:

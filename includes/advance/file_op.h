@@ -12,13 +12,12 @@
 #include <vector>
 
 
-using namespace std;
 
 // 文件相关操作
 namespace FileOps {
 
     // 读取文件名称为filename中的内容，并将其中包含的所有词语放进words中
-    int firstCharacterIndex(const string &s, int start) {
+    int firstCharacterIndex(const std::string &s, int start) {
         for (int i = start; i < s.length(); i++)
             if (isalpha(s[i]))
                 return i;
@@ -26,27 +25,27 @@ namespace FileOps {
     }
 
     // 将字符串s中的所有字母转换成小写之后返回
-    string lowerS(const string &s) {
+    std::string lowerS(const std::string &s) {
 
-        string ret = "";
+        std::string ret = "";
         for (int i = 0; i < s.length(); i++)
             ret += tolower(s[i]);
         return ret;
     }
 
     // 读取文件名称为filename中的内容，并将其中包含的所有词语放进words中
-    bool readFile(const string &filename, vector<string> &words) {
+    bool readFile(const std::string &filename, std::vector<std::string> &words) {
 
         // 文件读取
-        string line;
-        string contents = "";
-        ifstream file(filename);
+        std::string line;
+        std::string contents = "";
+        std::ifstream file(filename);
         if (file.is_open()) {
             while (getline(file, line))
                 contents += (line + "\n");
             file.close();
         } else {
-            cout << "Can not open " << filename << " !!!" << endl;
+            std::cout << "Can not open " << filename << " !!!" << std::endl;
             return false;
         }
 

@@ -5,6 +5,8 @@
 #ifndef LEARN_CPP_BINARY_NODE_H
 #define LEARN_CPP_BINARY_NODE_H
 
+#include <string>
+
 template<class Key, class Value>
 class BinaryNode {
 

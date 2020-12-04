@@ -5,7 +5,6 @@
 
 #include "../../../includes/search/binary_search_tree.h"
 
-
 template<typename Key, typename Value>
 BinarySearchTree<Key, Value>::BinarySearchTree() {
     this->root = nullptr;
@@ -99,14 +98,6 @@ BinaryNode<Key, Value> *searchInner(BinaryNode<Key, Value> *node, Key key) {
     }
 }
 
-template<class Key, class Value>
-Value *BinarySearchTree<Key, Value>::searchValue(Key key) {
-    BinaryNode<Key,Value> *p = searchInner(root, key);
-    if (p == nullptr){
-        return nullptr;
-    }
-    return &(p->getValue());
-}
 
 template<typename Key, typename Value>
 BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::search(Key key) {
