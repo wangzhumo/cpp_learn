@@ -67,25 +67,12 @@ void indexHeapSort(T arr[], int n) {
 }
 
 
-int main() {
-    int n = 100000;
-    int *arrayA = SortTestHelper::generateRandomArray(n, 0, n);
-    int *arrayB = SortTestHelper::copyIntArray(arrayA, n);
-    int *arrayC = SortTestHelper::copyIntArray(arrayA, n);
-    int *arrayD = SortTestHelper::copyIntArray(arrayA, n);
-
-    // SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
-    // SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);
-    // SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayB, n);
-    // SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
-    // SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD,n);
-    // SortTestHelper::testSort("IndexHeap    Sort", indexHeapSort, arrayC, n);
-
-    std::string fileName = "documents/bible.txt";
+void testBinarySearchTree(){
+    std::string fileName = "/Users/wangzhumo/Private/learncpp/documents/bible.txt";
 
     std::vector<std::string> words;
     if (FileOps::readFile(fileName, words)) {
-        std::cout << "There are totally " << words.size() << "words in  " << fileName << std::endl;
+        std::cout << "There are totally " << words.size() << " words in  " << fileName << std::endl;
         std::cout << std::endl;
 
         time_t startTime = clock();
@@ -103,17 +90,35 @@ int main() {
         }
 
         // 输出圣经中god一词出现的频率
-        if (binarySearchTree.contain("god"))
-            std::cout << "'god' : " << binarySearchTree.search("god")->getValue() << std::endl;
+        if (binarySearchTree.contain("father"))
+            std::cout << "'father' : " << binarySearchTree.search("father")->getValue() << std::endl;
         else
-            std::cout << "No word 'god' in " << fileName << std::endl;
+            std::cout << "No word 'father' in " << fileName << std::endl;
 
         time_t endTime = clock();
 
         std::cout << "BinarySearchTree , time: " << double(endTime - startTime) / CLOCKS_PER_SEC << " s." << std::endl;
         std::cout << std::endl;
     }
+}
 
+
+int main() {
+    int n = 100000;
+    int *arrayA = SortTestHelper::generateRandomArray(n, 0, n);
+    int *arrayB = SortTestHelper::copyIntArray(arrayA, n);
+    int *arrayC = SortTestHelper::copyIntArray(arrayA, n);
+    int *arrayD = SortTestHelper::copyIntArray(arrayA, n);
+
+    // SortTestHelper::testSort("Selection Sort", selectSort, arrayA, n);
+    // SortTestHelper::testSort("Insertion Sort", insertSortDecSwap, arrayB, n);
+    // SortTestHelper::testSort("MergeBu   Sort", mergeSort, arrayB, n);
+    // SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
+    // SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD,n);
+    // SortTestHelper::testSort("IndexHeap    Sort", indexHeapSort, arrayC, n);
+
+
+    testBinarySearchTree();
 
     delete[] arrayA;
     delete[] arrayB;
