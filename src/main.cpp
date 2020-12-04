@@ -9,6 +9,8 @@
 #include "../includes/search/binary_search_tree.h"
 #include "../includes/advance/file_op.h"
 
+using namespace std;
+
 template <typename T>
 void selectSort(T arr[], int n) {
     SelectionSort<int> selectSort = SelectionSort<int>();
@@ -64,6 +66,9 @@ void indexHeapSort(T arr[], int n) {
     }
 }
 
+
+
+
 int main() {
     int n = 100000;
     int* arrayA = SortTestHelper::generateRandomArray(n, 0, n);
@@ -77,8 +82,42 @@ int main() {
     // SortTestHelper::testSort("Quick     Sort", quickSort, arrayC, n);
     // SortTestHelper::testSort("Quick Double Sort", quickSortDouble, arrayD,n);
     // SortTestHelper::testSort("IndexHeap    Sort", indexHeapSort, arrayC, n);
-    BinarySearch<int> binarySearchTree = BinarySearch<int>();
-    binarySearchTree.binarySearch(arrayA,n,998);
+
+    string fileName = "documents/bible.txt";
+
+    vector<string> words;
+    if(FileOps::readFile(fileName,words)){
+        cout << "There are totally " << words.size() << "words in  " << fileName << endl;
+        cout << endl;
+
+        time_t startTime = clock();
+        BinarySearchTree<string ,int> binarySearchTree = BinarySearchTree<string,int>();
+        for (auto & word : words){
+            int *count = binarySearchTree.searchValue(word);
+            if (count == nullptr){
+                // 如果为空，则添加新元素
+                binarySearchTree.insert(word,1);
+            } else{
+                // 否则给它的value增加1
+                (*count)++;
+            }
+        }
+
+        // 输出圣经中god一词出现的频率
+        if(binarySearchTree.contain("god"))
+            cout << "'god' : " << *binarySearchTree.searchValue("god") << endl;
+        else
+            cout << "No word 'god' in " << fileName << endl;
+
+        time_t endTime = clock();
+
+        cout << "BinarySearchTree , time: " << double(endTime - startTime) / CLOCKS_PER_SEC << " s." << endl;
+        cout << endl;
+    }
+
+
+
+
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;

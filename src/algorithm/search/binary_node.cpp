@@ -45,3 +45,13 @@ template<class Key, class Value>
 void BinaryNode<Key, Value>::setRight(BinaryNode<Key, Value> *node) {
     this->right = node;
 }
+
+template<class Key, class Value>
+void BinaryNode<Key, Value>::setValue(Value v) {
+    this->value = v;
+}
+
+template<class Key, class Value>
+void BinaryNode<Key, Value>::setKey(Key k) {
+    this->key = k;
+}

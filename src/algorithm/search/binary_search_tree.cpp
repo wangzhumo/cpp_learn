@@ -2,6 +2,7 @@
 // Created by 王诛魔 on 12/3/20.
 //
 
+
 #include "../../../includes/search/binary_search_tree.h"
 
 
@@ -33,15 +34,15 @@ BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::insert(BinaryNode<Key, Val
         return new BinaryNode<Key, Value>(key, value);
     }
     // 如果不为空，则判断即可
-    if (key == root->key) {
+    if (key == root->getKey()) {
         // 如果相同，直接更新即可
-        root->value = value;
-    } else if (key < root->key) {
+        root->setValue(value);
+    } else if (key < root->getKey()) {
         // 如果小于root值，则应该插入左边
-        root->left = insert(root->left, key, value);
+        root->setLeft(insert(root->getLeft(), key, value));
     } else {
         // 否则插入右边
-        root->right = insert(root->right, key, value);
+        root->setRight(insert(root->getRight(), key, value));
     }
     return root;
 }
@@ -55,27 +56,27 @@ void BinarySearchTree<Key, Value>::insertWhile(Key key, Value value) {
     BinaryNode<Key, Value> *pre = p;
     // 开始循环，如果p不为空，就一直循环
     while (p) {
-        if (key > p->key) {
+        if (key > p->getKey()) {
             // 要插入的key大于当前的这个node，应该修改p为他的右节点
             pre = p;
-            p = p->right;
-        } else if (key < p->key) {
+            p = p->getRight();
+        } else if (key < p->getKey()) {
             // 要插入的key小于当前的这个node，应该修改p为他的左节点
             pre = p;
-            p = p->left;
+            p = p->getLeft();
         } else {
             // 否则就是相等了，这个时候我需要去覆盖原来的值
             // 此时我们不修改pre的指向即可让他覆盖
         }
     }
     // 如果是null,或者查到一个p的值是可以插入的了
-    if (key > pre->key) {
-        pre->right = new BinaryNode<Key, Value>(key, value);
-    } else if (key < pre->key) {
-        pre->left = new BinaryNode<Key, Value>(key, value);
+    if (key > pre->getKey()) {
+        pre->setRight(new BinaryNode<Key, Value>(key, value));
+    } else if (key < pre->getKey()) {
+        pre->setLeft(new BinaryNode<Key, Value>(key, value));
     } else {
         // 直接覆盖value即可
-        pre->value = value;
+        pre->setValue(value);
     }
 
 }
@@ -92,12 +93,20 @@ BinaryNode<Key, Value> *searchInner(BinaryNode<Key, Value> *node, Key key) {
         return node;
     } else if (key < node->getKey()) {
         // 如果我小于当前的node,继续查找左节点
-        return search(node->getLeft(), key);
+        return searchInner(node->getLeft(), key);
     } else {
-        return search(node->getRight(), key);
+        return searchInner(node->getRight(), key);
     }
 }
 
+template<class Key, class Value>
+Value *BinarySearchTree<Key, Value>::searchValue(Key key) {
+    BinaryNode<Key,Value> *p = searchInner(root, key);
+    if (p == nullptr){
+        return nullptr;
+    }
+    return &(p->getValue());
+}
 
 template<typename Key, typename Value>
 BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::search(Key key) {
@@ -130,6 +139,13 @@ template<typename Key, typename Value>
 bool BinarySearchTree<Key, Value>::contain(Key key) {
     return containInner(key);
 }
+
+
+// Explicit template instantiation
+template
+class BinarySearchTree<std::string,int>;
+
+
 
 
 
