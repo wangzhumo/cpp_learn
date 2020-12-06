@@ -50,6 +50,7 @@ void MoveZeroes::moveZeroesSwap(std::vector<int> &nums) {
             if(i != slowIndex){
                 std::swap(nums[slowIndex++], nums[i]);
             }else{
+                // 如果相等，也需要向前移动，因为需要保持原序列顺序
                 slowIndex++;
             }
         }
