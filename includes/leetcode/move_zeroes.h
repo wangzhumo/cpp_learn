@@ -12,6 +12,8 @@ class MoveZeroes {
 
 public:
     void moveZeroes(std::vector<int> &nums);
+
+    void moveZeroesDoubleIndex(std::vector<int> &nums);
 };
 
 
