@@ -43,4 +43,17 @@ void MoveZeroes::moveZeroesDoubleIndex(std::vector<int> &nums) {
     }
 }
 
+void MoveZeroes::moveZeroesSwap(std::vector<int> &nums) {
+    int slowIndex =0;
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i]){
+            if(i != slowIndex){
+                std::swap(nums[slowIndex++], nums[i]);
+            }else{
+                slowIndex++;
+            }
+        }
+    }
+}
+
 
