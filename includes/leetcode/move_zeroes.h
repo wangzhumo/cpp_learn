@@ -11,7 +11,7 @@
 class MoveZeroes {
 
 public:
-    void moveZeroes();
+    void moveZeroes(std::vector<int> &nums);
 };
 
 
