@@ -27,12 +27,13 @@ aux_source_directory(src/basic SRC_BASIC)
 aux_source_directory(src/algorithm/sorts SRC_ALGORITHM_SORT)
 aux_source_directory(src/algorithm/heap SRC_ALGORITHM_HEAP)
 aux_source_directory(src/algorithm/search SRC_ALGORITHM_SEARCH)
+aux_source_directory(src/leetcode SRC_ALGORITHM_LEETCODE)
 
 
 # Set all source
 set(ALL_SOURCE ${SRC_DIR} ${SRC_ADVANCE} ${SRC_BASIC}
         ${SRC_ALGORITHM_SORT} ${SRC_ALGORITHM_HEAP}
-        ${SRC_ALGORITHM_SEARCH})
+        ${SRC_ALGORITHM_SEARCH} ${SRC_ALGORITHM_LEETCODE})
 add_executable(learn_cpp ${ALL_SOURCE})
 
 # Find xxx include directories and link libraries.
@@ -46,7 +47,8 @@ add_executable(learn_cpp ${ALL_SOURCE})
 # Include dir
 # ${EVENT_INCLUDE_DIR}
 set(INCLUDES includes/advance/ includes/basic/ includes/sorts/ includes/heap/ includes/search/)
-include_directories(${INCLUDES})
+set(LEETCODE includes/leetcode/)
+include_directories(${INCLUDES} ${LEETCODE})
 
 
 # Link dirs
