@@ -27,6 +27,7 @@ int RemoveNumsVal::removeElement(std::vector<int>& nums, int val) {
                 k = -1;
             }
         }else{
+            std::cout << "k = " << i << std::endl;
             k = i;  // 此时等待下一个
         }
     }

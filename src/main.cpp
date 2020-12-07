@@ -126,6 +126,12 @@ int main() {
     std::vector<int> vec {0,1,2,2,3,0,4,2};
     RemoveNumsVal val = RemoveNumsVal();
     val.removeElement(vec,2);
+
+    for (size_t i = 0; i < vec.size(); i++)
+    {
+        std::cout << vec[i] << std::endl;
+    }
+    
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;
