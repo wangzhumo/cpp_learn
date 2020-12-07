@@ -18,17 +18,19 @@
 //你不需要考虑数组中超出新长度后面的元素。
 int RemoveNumsVal::removeElement(std::vector<int>& nums, int val) {
     // 遍历整个数组
-    int k = -1;
+    int k = 0;  // k the last order list index
     for (int i = 0; i < nums.size(); i++) {
         if (nums[i] != val){
-            // 判断是否需要交换
-            if (k >= 0){
+            if (i > k){
                 std::swap(nums[k],nums[i]);
-                k = -1;
             }
+            k++;
+            std::cout << "i = " << i << " , k = " << k << std::endl;
+            
         }else{
-            std::cout << "k = " << i << std::endl;
-            k = i;  // 此时等待下一个
+            
+            //k++;  // 此时等待下一个
+            std::cout << "k = " << k << std::endl;
         }
     }
     return k;

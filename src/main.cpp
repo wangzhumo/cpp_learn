@@ -129,7 +129,7 @@ int main() {
 
     for (size_t i = 0; i < vec.size(); i++)
     {
-        std::cout << vec[i] << std::endl;
+        std::cout << vec[i];
     }
     
     delete[] arrayA;
