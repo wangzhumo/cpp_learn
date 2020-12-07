@@ -9,6 +9,7 @@
 #include "../includes/search/binary_node.h"
 #include "../includes/search/binary_search_tree.h"
 #include "../includes/advance/file_op.h"
+#include "../includes/leetcode/remove_nums_val.h"
 
 
 template<typename T>
@@ -122,8 +123,9 @@ int main() {
     // SortTestHelper::testSort("IndexHeap    Sort", indexHeapSort, arrayC, n);
 
 
-    testBinarySearchTree();
-
+    std::vector<int> vec {0,1,2,2,3,0,4,2};
+    RemoveNumsVal val = RemoveNumsVal();
+    val.removeElement(vec,2);
     delete[] arrayA;
     delete[] arrayB;
     delete[] arrayC;
