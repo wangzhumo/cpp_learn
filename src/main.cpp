@@ -1,14 +1,17 @@
-#include "../includes/advance/file_op.h"
+#include <ctime>
 #include "../includes/heap/index_heap.h"
 #include "../includes/heap/max_heap.h"
-#include "../includes/search/binary_node.h"
-#include "../includes/search/binary_search.h"
-#include "../includes/search/binary_search_tree.h"
 #include "../includes/sorts/insert_sort.h"
 #include "../includes/sorts/merge_sort.h"
 #include "../includes/sorts/quick_sort.h"
 #include "../includes/sorts/select_sort.h"
 #include "../includes/sorts/sort_test_helper.h"
+#include "../includes/search/binary_search.h"
+#include "../includes/search/binary_node.h"
+#include "../includes/search/binary_search_tree.h"
+#include "../includes/advance/file_op.h"
+#include "../includes/leetcode/remove_nums_val.h"
+
 
 template <typename T>
 void selectSort(T arr[], int n) {
@@ -66,50 +69,9 @@ void indexHeapSort(T arr[], int n) {
 }
 
 void testBinarySearchTree() {
-    std::string fileName =
-        "/Users/wangzhumo/Private/learncpp/documents/bible.txt";
+    std::string fileName ="/Users/wangzhumo/Private/learncpp/documents/bible.txt";
 
     std::vector<std::string> words;
-    if (FileOps::readFile(fileName, words)) {
-        std::cout << "There are totally " << words.size() << " words in  "
-                  << fileName << std::endl;
-        std::cout << std::endl;
-
-        time_t startTime = clock();
-        BinarySearchTree<std::string, int> binarySearchTree =
-            BinarySearchTree<std::string, int>();
-        for (auto& word : words) {
-            BinaryNode<std::string, int>* p = binarySearchTree.search(word);
-            if (p == nullptr) {
-                // 如果为空，则添加新元素
-                binarySearchTree.insert(word, 1);
-            } else {
-                // 否则给它的value增加1
-                int count = p->getValue();
-                p->setValue(count + 1);
-            }
-        }
-
-        // 输出圣经中god一词出现的频率
-        if (binarySearchTree.contain("father"))
-            std::cout << "'father' : "
-                      << binarySearchTree.search("father")->getValue()
-                      << std::endl;
-        else
-            std::cout << "No word 'father' in " << fileName << std::endl;
-
-        time_t endTime = clock();
-
-        std::cout << "BinarySearchTree , time: "
-                  << double(endTime - startTime) / CLOCKS_PER_SEC << " s."
-                  << std::endl;
-        std::cout << std::endl;
-
-        std::cout << "BinarySearchTree , min: "
-                  << binarySearchTree.min()->getKey() << std::endl;
-        std::cout << "BinarySearchTree , max: "
-                  << binarySearchTree.max()->getKey() << std::endl;
-    }
 }
 
 int main() {
