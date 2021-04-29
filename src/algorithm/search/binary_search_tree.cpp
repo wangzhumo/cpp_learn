@@ -310,6 +310,7 @@ BinaryNode<Key, Value> *BinarySearchTree<Key, Value>::remove(BinaryNode<Key, Val
         count++;
 
         // 2.给minRight设置新的right,left
+        // TODO 为什么这里必须要先setRight ?
         minRight->setRight(removeMinInner(node->getRight()));
         minRight->setLeft(node->getLeft());
 
